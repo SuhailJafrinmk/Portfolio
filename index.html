@@ -198,16 +198,16 @@
                 <div class="form-row">
                     <div class="form-group col-sm-6">
                         <input type="text" size="50" class="form-control" placeholder="Your Name" name="name"  id="name">
-                        <span id="nameerror"></span>
+                        <span class="text-danger" id="nameerror"></span>
                     </div>
                     <div class="form-group col-sm-6">
                         <input type="email" class="form-control" placeholder="Enter Email" name="email" id="email">
-                        <span id="emailerror"></span>
+                        <span class="text-danger" id="emailerror"></span>
                     </div>
                     <div class="form-group col-sm-12">
                         <textarea name="comment" id="comment" rows="6" class="form-control" 
                             placeholder="Write Something"></textarea>
-                            <span id="Messageerror"></span>
+                            <span class="text-danger" id="Messageerror"></span>
                     </div>
                     <div class="form-group col-sm-12 mt-3">
                         <input type="submit" value="Send Message" class="btn btn-outline-primary rounded">
@@ -255,39 +255,16 @@
         const Message=document.getElementById("comment").value;
         
 
-        // if(name===""){
-        //     
-        // }
-        // else {
-        //     document.getElementById("nameerror").textContent="";
-        // }
-        // if(email===""){
-        //    
-        // }
-        // else if(!email.includes(check)){
-        //     document.getElementById("emailerror").textContent="email must contain @";
-        // }
-        // else {
-        //     document.getElementById("emailerror").textContent="";
-        // }
-        
-        // if(Message===""){
-        //     
-        // }
-        // else {
-          
-        // }
 
-        if(name==""||name==undefined){
-            document.getElementById("nameerror").textContent="name is required";
+        if(name==""||email==""||Message==""){
+            document.getElementById("nameerror").textContent="name is required*";
+            document.getElementById("emailerror").textContent="email is required*";
+            document.getElementById("Messageerror").textContent="message is required*"; 
         }
-        else if(email==""||email==undefined){
-            document.getElementById("emailerror").textContent="email is required";
-        }
-        else if(Message==''){
-            document.getElementById("Messageerror").textContent="message is required";
-        }
+       
         else{
+            document.getElementById("nameerror").textContent="";
+            document.getElementById("emailerror").textContent="";
             document.getElementById("Messageerror").textContent="";
             $("#submit-form").submit((e)=>{
             e.preventDefault()
