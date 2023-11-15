@@ -247,45 +247,49 @@
     <!-- Meyawo js -->
     <script src="assets/js/meyawo.js"></script>
     <script>
-        document.getElementById("submit-form").addEventListener("submit",function(event) { event.preventDefault();
-       
-       
-       
+        document.getElementById("submit-form").addEventListener("submit",function(event) { 
+    
+            event.preventDefault();
         const name=document.getElementById("name").value;
         const email=document.getElementById("email").value;
         const Message=document.getElementById("comment").value;
-        const check="@";
         
 
-        if(name===""){
+        // if(name===""){
+        //     
+        // }
+        // else {
+        //     document.getElementById("nameerror").textContent="";
+        // }
+        // if(email===""){
+        //    
+        // }
+        // else if(!email.includes(check)){
+        //     document.getElementById("emailerror").textContent="email must contain @";
+        // }
+        // else {
+        //     document.getElementById("emailerror").textContent="";
+        // }
+        
+        // if(Message===""){
+        //     
+        // }
+        // else {
+          
+        // }
+
+        if(name==""||name==undefined){
             document.getElementById("nameerror").textContent="name is required";
         }
-        else {
-            document.getElementById("nameerror").textContent="";
-        }
-        if(email===""){
+        else if(email==""||email==undefined){
             document.getElementById("emailerror").textContent="email is required";
         }
-        else if(!email.includes(check)){
-            document.getElementById("emailerror").textContent="email must contain @";
-        }
-        else {
-            document.getElementById("emailerror").textContent="";
-        }
-        
-        if(Message===""){
+        else if(Message==''){
             document.getElementById("Messageerror").textContent="message is required";
         }
-        else {
+        else{
             document.getElementById("Messageerror").textContent="";
-        }
-
-        
-        });
-
-    </script>
-    <script>
-        $("#submit-form").submit((e)=>{
+            $("#submit-form").submit((e)=>{
             e.preventDefault()
             $.ajax({
                 url:"https://script.google.com/macros/s/AKfycbwKH9ulsQeGjNokj6PmlSoWcuKjpX66izFGXypSJB_sPlGYW-GK7pQysD5LJ0H87B6J/exec",
@@ -302,7 +306,11 @@
                 }
             })
         })
+        }
+        });
+
     </script>
+   
 
 </body>
 
